@@ -10,85 +10,68 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Python 2.7.13
-Flask 0.12.2
-Keras
+Pip (Pillow) v9.01
+Python v2.7.13
+Flask v0.12.2
+TensorFlow v1.3 using Keras
 Numpy
 PyFcm
-OpenCV 2.14.13.2
+OpenCV v2.14.13.2
 
 An Android device running android v4.4 and above
 ```
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+A step by step series of examples that tell you have to get a development environment for webserver running for mac.
 
 ```
-Give the example
+ For pip and Python
+ brew install python 
+ 
+ For Flask
+ pip install flask-restful
+ 
+ For keras
+ pip install keras
+ 
+ For tensorflow
+ pip install --upgrade tensorflow
+ 
+ For Numpy
+ pip install numpy
+ 
+ For Pyfcm
+ pip install pyfcm
+ 
+ For Opencv
+ pip install opencv-python
+ 
 ```
 
-And repeat
-
-```
-until finished
-```
 
 End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+## Usage
+To run the flask_app.py webserver locally.
+Clone the repository using ```git clone  https://github.com/Prateekj2903/HackData.git  ```
+To run the flask_app.py webserver
+1.Open the terminal
+2.navigate to the location where the repository is cloned
+3.run the following command
+``` python flask_app.py```
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [Flask](http://flask.pocoo.org/docs/0.12/) - The web framework used
+* [AndroidStudio](https://developer.android.com/studio/index.html) - Installation and Android app handeling
+* [Python](https://www.python.org/doc/) - Used to create the Flask application(REST API)
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+## Contributors
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
 
 * Hat tip to anyone who's code was used
-* Inspiration
-* etc
-
+* Google
