@@ -1,7 +1,5 @@
 # Vidya-Education for children made interactive
 
-![Alt text](Prateekj2903/HackData/vidya_logo.png?raw=true "Title")
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.The project repository also contains files for the Android application.
@@ -18,6 +16,7 @@ TensorFlow v1.3 using Keras
 Numpy
 PyFcm
 OpenCV v2.14.13.2
+hackr
 
 An Android device running android v4.4 and above
 ```
@@ -47,6 +46,9 @@ A step by step series of examples that tell you have to get a development enviro
  
  For Opencv
  pip install opencv-python
+ 
+ For hackr
+ pip install hackr
  
 ```
 
