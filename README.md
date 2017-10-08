@@ -1,5 +1,6 @@
 # Vidya-Education for children made interactive
 
+![Alt text](Prateekj2903/HackData/vidya_logo.png?raw=true "Title")
 
 ## Getting Started
 
