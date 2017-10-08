@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VidyaApp</string>
+    <string name="questions">whatever question we want to type in the text box</string>
+    <string name="speechQuestion">Question</string>
+
+    <string name="speech_prompt">Say something</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Tap on mic to speak</string>
+</resources>
