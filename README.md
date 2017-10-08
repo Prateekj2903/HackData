@@ -10,7 +10,14 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-Give examples
+Python 2.7.13
+Flask 0.12.2
+Keras
+Numpy
+PyFcm
+OpenCV 2.14.13.2
+
+An Android device running android v4.4 and above
 ```
 
 ### Installing
