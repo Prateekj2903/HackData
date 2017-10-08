@@ -13,6 +13,7 @@ from keras.layers import Dense, Dropout, Activation, Conv2D, MaxPooling2D, Flatt
 from pyfcm import FCMNotification
 import matplotlib.pyplot as plt
 import cv2
+import hackr
 app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 val=""
@@ -37,7 +38,10 @@ def imageFunction():
         # print(newFile)
 
         imgdata = base64.b64decode(newFile)
-
+        
+        random_digits = hackr.generator.digits(10)
+        random_chars = hackr.generator.chars(10)
+        
         filename = 'some_image.png'
         with open(filename, 'wb') as f:
             f.write(imgdata)
@@ -69,12 +73,12 @@ def imageFunction():
 
             model.load_weights('weights.h5')
 
-
-
             pred = model.predict(resized)
         # print (pred)
             val=np.argmax(pred)
-            print val
+            
+            if val in random_digits:
+                print val
         # print (val)
         # print ("Got Image")
         # plt.show()
@@ -86,7 +90,9 @@ def imageFunction():
 
             pred = model.predict(resized)
             val = np.argmax(pred)
-            print val
+            if i in random_chars:
+                print val    
+                    
         testNotif()
         return "Success"
 
