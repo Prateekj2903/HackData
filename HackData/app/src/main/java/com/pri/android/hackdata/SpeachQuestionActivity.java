@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -125,8 +126,8 @@ public class SpeachQuestionActivity extends AppCompatActivity {
         learnAlphabets = new HashMap<>();
 
         Model m = new Model();
-        m.question = "Draw two";
-        m.answer = "2";
+        m.question = "Draw eight";
+        m.answer = "8";
         learnDigits.put(1, m);
 
         m = new Model();
@@ -266,7 +267,11 @@ public class SpeachQuestionActivity extends AppCompatActivity {
 
             Map<String, String> jsonParams = new HashMap<String, String>();
             String image = getStringImage(bitmap);
-            jsonParams.put("imageFile", image);
+            if(caller == 1) {
+                jsonParams.put("imageFile", "0" + image);
+            }else{
+                jsonParams.put("imageFile", "1" + image);
+            }
 
             JsonObjectRequest myRequest = new JsonObjectRequest(
                     Request.Method.POST,
@@ -288,7 +293,7 @@ public class SpeachQuestionActivity extends AppCompatActivity {
                             volleyError.printStackTrace();
                             loading.dismiss();
 
-                            Toast.makeText(SpeachQuestionActivity.this, "" + volleyError, Toast.LENGTH_LONG).show();
+//                            Toast.makeText(SpeachQuestionActivity.this, "" + volleyError, Toast.LENGTH_LONG).show();
                         }
                     }) {
 
@@ -300,6 +305,10 @@ public class SpeachQuestionActivity extends AppCompatActivity {
                 }
             };
 //            MyApplication.getInstance().addToRequestQueue(myRequest, "tag");
+            myRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    0,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
             RequestQueue requestQueue = Volley.newRequestQueue(this);
             requestQueue.add(myRequest);
@@ -315,6 +324,7 @@ public class SpeachQuestionActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String ans = intent.getExtras().getString("ans");
+            Toast.makeText(getApplicationContext(), ans, Toast.LENGTH_SHORT);
             if(caller == 1){
                 String correct = learnDigits.get(quesNo).answer.toString();
                 if(correct.equals(ans)){
