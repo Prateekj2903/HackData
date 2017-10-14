@@ -75,11 +75,11 @@ def detect_char(img):
 
 def detect_object(img, correct_ans):
     vision_client = vision.Client()
-    file_name = 'apple.jpg'
+    file_name = 'some_image.png'
 
     with io.open(file_name, 'rb') as image_file:
         content = image_file.read()
-        image = vision_client.image(content=content, )
+    image = vision_client.image(content=content, )
 
     labels = image.detect_labels()
     for label in labels:
@@ -87,6 +87,7 @@ def detect_object(img, correct_ans):
 
     for label in labels:
         if str(label.description) == correct_ans:
+            print("true : ",label.description)
             return "true"
     
     return "false"
