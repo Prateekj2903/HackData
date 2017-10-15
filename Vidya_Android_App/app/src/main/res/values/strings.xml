@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">VidyaApp</string>
+    <string name="questions">whatever question we want to type in the text box</string>
+    <string name="speechQuestion">Question</string>
+    <string name="Vidya">VIDYA</string>
+
+    <string name="speech_prompt">Say something</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Tap on mic to speak</string>
+
+    <string name="learn_things">Learn to do Things</string>
+    <string name="practice">Practice Everything</string>
+    <string name="challenges">Weekly Challenges</string>
+
+    <string name="tracing_alpha">Tracing Alphabets</string>
+    <string name="speak_alpha">speaking Alphabets</string>
+    <string name="speak_dig">speaking Digits</string>
+    <string name="trace_dig">Tracing digits</string>
+    <string name="learn_arith">Learn Arithmatics</string>
+    <string name="pro_words">Pronounce Words</string>
+
+    <string name="draw_alpha">Draw Alphabets</string>
+    <string name="identify_obj">Identify Objects</string>
+    <string name="find_obj">Find the Object</string>
+    <string name="draw_dig">Draw digits</string>
+    <string name="prac_arith">Practice Arithmatics</string>
+    <string name="prac_words">Practice Pronounce</string>
+
+
+    <string name="tap_n_speak">Tap The Button And Speak</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

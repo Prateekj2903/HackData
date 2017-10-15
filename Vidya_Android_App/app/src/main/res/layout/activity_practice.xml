@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.pri.android.hackdata.activity.MainActivity">
+    <ImageView
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_top_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <LinearLayout
+        android:weightSum="3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#f06292"
+                android:orientation="vertical"
+                android:id="@+id/draw_alpha"
+                >
+                <ImageView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/draw_char"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:text="@string/draw_alpha"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#7e57c2"
+                android:orientation="vertical"
+                android:id="@+id/id_obj"
+                >
+                <ImageView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/identify_object"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:text="@string/identify_obj"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#4db6ac"
+                android:orientation="vertical"
+                android:id="@+id/find_obj"
+                >
+                <ImageView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/find_object"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_height="0dp"
+                    android:layout_width="fill_parent"
+                    android:text="@string/find_obj"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#4dd0e1"
+                android:orientation="vertical"
+                android:id="@+id/draw_dig"
+                >
+                <ImageView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/trace_digit"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:text="@string/draw_dig"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ff7043"
+                android:orientation="vertical"
+                android:id="@+id/prac_arth"
+                >
+                <ImageView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/arithmetic_do"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:text="@string/prac_arith"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#ab47ab"
+                android:orientation="vertical"
+                android:id="@+id/prac_pro"
+                >
+                <ImageView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:src="@drawable/speak_words"
+                    android:layout_weight="2"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_height="0dp"
+                    android:layout_width="wrap_content"
+                    android:text="@string/prac_words"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    >
+
+                </TextView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
