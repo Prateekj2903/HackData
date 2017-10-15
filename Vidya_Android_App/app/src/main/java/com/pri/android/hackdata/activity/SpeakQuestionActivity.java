@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.marcinmoskala.videoplayview.VideoPlayView;
 import com.pri.android.hackdata.Model;
 import com.pri.android.hackdata.R;
 
@@ -29,6 +30,7 @@ import java.util.Locale;
 
 public class SpeakQuestionActivity extends AppCompatActivity {
     FrameLayout youtube;
+    VideoPlayView video;
     RelativeLayout speak;
     private ImageView btnSpeak;
     EditText editTextAns;
@@ -41,9 +43,10 @@ public class SpeakQuestionActivity extends AppCompatActivity {
     int quesNo = 0;
     int caller = 0;
     int learn = 0;
-    int q=0;
+    int q = 0;
     String finalAns;
     TextToSpeech t1;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,36 +63,38 @@ public class SpeakQuestionActivity extends AppCompatActivity {
             }
         });
 
-        questionBox = (TextView)findViewById(R.id.question_box);
-        btSubmit = (Button)findViewById(R.id.submitButton);
+        questionBox = (TextView) findViewById(R.id.question_box);
+        btSubmit = (Button) findViewById(R.id.submitButton);
+        video = (VideoPlayView) findViewById(R.id.bigVideoView);
+
         initializeQuestions();
 
         callingIntent = getIntent();
         quesNo = callingIntent.getIntExtra("ques", 1);
         caller = callingIntent.getIntExtra("caller", 0);
-        q = callingIntent.getIntExtra("clickQ",0);
-        learn = callingIntent.getIntExtra("learn",0);
-        editTextAns = (EditText)findViewById(R.id.speak_edit_box);
-        speak = (RelativeLayout)findViewById(R.id.question_box_speach);
-        t1=new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+        q = callingIntent.getIntExtra("clickQ", 0);
+        learn = callingIntent.getIntExtra("learn", 0);
+        editTextAns = (EditText) findViewById(R.id.speak_edit_box);
+        speak = (RelativeLayout) findViewById(R.id.question_box_speach);
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status != TextToSpeech.ERROR) {
-                    t1.setLanguage(new Locale("en","IN"));
+                if (status != TextToSpeech.ERROR) {
+                    t1.setLanguage(new Locale("en", "IN"));
                 }
             }
         });
-        if(caller == 0){
+        if (caller == 0) {
             questionBox.setText(funWithNum.get(quesNo).question.toString());
-        }else{
+        } else {
             questionBox.setText(funWithWords.get(quesNo).question.toString());
         }
-        if(learn == 1){
+        if (learn == 1) {
             speak.setVisibility(View.VISIBLE);
             speak.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(caller == 2){
+                    if (caller == 2) {
                         String toSpeak = funWithWords.get(quesNo).question.toString();
 //                    Toast.makeText(getApplicationContext(), toSpeak,Toast.LENGTH_SHORT).show();
                         t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
@@ -97,56 +102,53 @@ public class SpeakQuestionActivity extends AppCompatActivity {
 
                 }
             });
-        }else{
+        } else {
             //// TODO: 15-10-2017  
         }
-        if(learn == 1 && caller ==0){
-//
-//            BlankFragment fragment = new BlankFragment();
-//            FragmentManager manager = getSupportFragmentManager();
-//            manager.beginTransaction()
-//                    .replace(R.id.youtube_view, fragment)
-//                    .commit();
+        if (learn == 1 && caller == 0) {
+
+            video.setVisibility(View.VISIBLE);
+
         }
 
         btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(caller == 0){
+                if (caller == 0) {
                     String correct = funWithNum.get(quesNo).answer.toString();
-                    if(correct.equals(finalAns)){
+                    if (correct.equals(finalAns)) {
                         Intent intent = new Intent(SpeakQuestionActivity.this, AnswerAcceptActivity.class);
                         intent.putExtra("caller", caller);
                         intent.putExtra("learn", learn);
                         intent.putExtra("ques", quesNo);
-                        intent.putExtra("clickQ",q);
+                        intent.putExtra("clickQ", q);
                         startActivity(intent);
                         finish();
-                    }else{
+                    } else {
                         Intent intent = new Intent(SpeakQuestionActivity.this, AnswerRejectActivity.class);
                         intent.putExtra("caller", caller);
                         intent.putExtra("ques", quesNo);
                         intent.putExtra("learn", learn);
-                        intent.putExtra("clickQ",q);
+                        intent.putExtra("clickQ", q);
                         startActivity(intent);
                         finish();
                     }
-                }else{
+                } else {
                     String correct = funWithWords.get(quesNo).answer.toString();
-                    if(correct.equals(finalAns)){
+                    if (correct.equals(finalAns)) {
                         Intent intent = new Intent(SpeakQuestionActivity.this, AnswerAcceptActivity.class);
                         intent.putExtra("caller", caller);
                         intent.putExtra("ques", quesNo);
                         intent.putExtra("learn", learn);
-                        intent.putExtra("clickQ",q);
+                        intent.putExtra("clickQ", q);
                         startActivity(intent);
                         finish();
-                    }else{
+                    } else {
                         Intent intent = new Intent(SpeakQuestionActivity.this, AnswerRejectActivity.class);
                         intent.putExtra("caller", caller);
                         intent.putExtra("ques", quesNo);
                         intent.putExtra("learn", learn);
-                        intent.putExtra("clickQ",q);
+                        intent.putExtra("clickQ", q);
                         startActivity(intent);
                         finish();
                     }
@@ -155,9 +157,10 @@ public class SpeakQuestionActivity extends AppCompatActivity {
         });
     }
 
+
     private void initializeQuestions() {
-        funWithNum= new HashMap<>();
-        funWithWords= new HashMap<>();
+        funWithNum = new HashMap<>();
+        funWithWords = new HashMap<>();
         Model m = new Model();
         m.question = "What is 2+2?";
         m.answer = "4";
@@ -214,7 +217,7 @@ public class SpeakQuestionActivity extends AppCompatActivity {
 
     /**
      * Receiving speech input
-     * */
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

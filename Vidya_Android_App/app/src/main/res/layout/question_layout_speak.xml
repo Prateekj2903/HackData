@@ -76,11 +76,13 @@
         android:background="@color/textColor" />
 
     <com.marcinmoskala.videoplayview.VideoPlayView
+
         android:id="@+id/bigVideoView"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="4"
-        app:videoUrl="https://cdn-e2.streamable.com/video/mp4/vino4.mp4?token=1509246684_125d2315c68769019121a7199a0509d7fef1439a" />
+        app:videoUrl="https://cf-e2.streamablevideo.com/video/mp4/0e0lh.mp4?token=1508049007-kYeDeM6RDMRxStIz%2F2nuuhHhc1Bec5tk4lFwLft%2BDaM%3D" />
 
     <ImageView
         android:id="@+id/btnSpeak"
