@@ -1,3 +1,5 @@
+![Vidya](HackData/images/vidya_logo.png)
+
 # Vidya-Education for children made interactive
 
 ## Getting Started
